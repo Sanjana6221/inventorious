@@ -1,0 +1,30 @@
+33:58(Starting time for CRUD app)
+
+To install any package
+- npm i -S react-router-dom
+- 
+
+1. prop types
+    https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/
+
+2. default props
+3. lifecycle methods
+    Mouting
+        - componentWillMount --> before component mount
+        - componentDidMount  --> after component mount
+    
+    Updating
+        - componentWillReceiveProps --> before component will receive props
+        - shouldComponentUpdate --> new props and the new state receiving(nextProps, nextState)
+        - componentWillUpdate --> before component update(nextProps, nextState)
+        - componentDidUpdate --> write after component update(prevProps, prevState)
+
+
+4. react routing
+https://reacttraining.com/react-router/web/example/basic
+
+
+IN CRUD app
+    - JSON.stringify
+    BasicExample
+     
