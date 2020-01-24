@@ -1,26 +1,12 @@
-import React, {Component} from 'react'
-import Table from './Table'
+import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Table from './components/Table'
+import Form from './components/Form'
+import Api from './components/Api'
 
 export default class App extends Component {
   state = {
-    characters: [
-      {
-        name: "Sanjana",
-        job: "Software Development",
-      },
-      {
-        name: "ABC",
-        job: "Tester",
-      },
-      {
-        name: "Dee",
-        job: "Aspiring actress",
-      },
-      {
-        name: "Dennis",
-        job: "Bartender",
-      }
-    ],
+    characters: [],
   }
 
   removeCharacter = (element) => {
@@ -33,11 +19,21 @@ export default class App extends Component {
     })
   }
 
+  handleSubmit = (character) => {
+    this.setState({
+      // characters: this.state.characters.concat(character)
+      characters: [...this.state.characters, character]
+    })
+  }
+
   render() {
     const tableData = this.state
 
     return (
       <div className="container">
+        <h2>React CRUD Tutorial</h2>
+        <Api />
+        <Form handleSubmit={this.handleSubmit}/>
         <Table tableData={tableData} removeCharacter={this.removeCharacter}/>
       </div>
     )

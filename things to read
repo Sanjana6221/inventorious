@@ -1,6 +1,8 @@
 Notes 
 -> A class component must include render(), and the return can only return one parent element.
 -> if the return is contained to one line, it does not need parentheses.
+-> We'll need the constructor() to use this, and to receive the props of the parent.
+-> Lifecycle is the order in which methods are called in React. Mounting refers to an item being inserted into the DOM.
 
 
 33:58(Starting time for CRUD app)
@@ -16,7 +18,7 @@ To install any package
 3. lifecycle methods
     Mouting
         - componentWillMount --> before component mount
-        - componentDidMount  --> after component mount
+        - componentDidMount  --> after component mount(means being inserted into the DOM)
     
     Updating
         - componentWillReceiveProps --> before component will receive props
@@ -29,7 +31,6 @@ To install any package
 https://reacttraining.com/react-router/web/example/basic
 
 
-IN CRUD app
+Questions:
     - JSON.stringify
-    BasicExample
-     
+    - serviceWorker
