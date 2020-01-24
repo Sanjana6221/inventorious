@@ -1,6 +1,7 @@
 Notes 
 -> A class component must include render(), and the return can only return one parent element.
 -> if the return is contained to one line, it does not need parentheses.
+-> We'll need the constructor() to use this, and to receive the props of the parent.
 
 
 33:58(Starting time for CRUD app)

@@ -1,26 +1,10 @@
 import React, {Component} from 'react'
 import Table from './Table'
+import Form from './Form'
 
 export default class App extends Component {
   state = {
-    characters: [
-      {
-        name: "Sanjana",
-        job: "Software Development",
-      },
-      {
-        name: "ABC",
-        job: "Tester",
-      },
-      {
-        name: "Dee",
-        job: "Aspiring actress",
-      },
-      {
-        name: "Dennis",
-        job: "Bartender",
-      }
-    ],
+    characters: [],
   }
 
   removeCharacter = (element) => {
@@ -33,11 +17,19 @@ export default class App extends Component {
     })
   }
 
+  handleSubmit = (character) => {
+    this.setState({
+      // characters: this.state.characters.concat(character)
+      characters: [...this.state.characters, character]
+    })
+  }
+
   render() {
     const tableData = this.state
 
     return (
       <div className="container">
+        <Form handleSubmit={this.handleSubmit}/>
         <Table tableData={tableData} removeCharacter={this.removeCharacter}/>
       </div>
     )
