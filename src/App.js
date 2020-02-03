@@ -1,8 +1,9 @@
-import React, {Component, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserTable from './components/tables/UserTable';
 import AddUserForm from './components/forms/AddUserForm';
 import EditUserForm from './components/forms/EditUserForm';
+import { func } from 'prop-types';
 
 const App = () => {
   const usersdata = [
@@ -15,6 +16,7 @@ const App = () => {
   const [editing, setEditing] = useState(false)
   const initialFormState = {id: null, name: '', username: ''}
   const [currentUser, setCurrentUser] = useState(initialFormState)
+  const [currentTime, setCurrentTime] = useState(new Date())
 
   const addUser = (user) => {
     user.id = users.length + 1
@@ -35,8 +37,18 @@ const App = () => {
     setUsers(users.map(user => (user.id === user_id ? updatedUser : user )))
   }
 
+  useEffect(() => {
+    setInterval(() => tick(), 1000)
+  })
+
+  function tick(){
+    setCurrentTime(new Date())
+  }
+
   return(
     <div className="container">
+      <h3>Time: {currentTime.toLocaleTimeString()} </h3>
+     
       <h1>CRUD App with Hooks</h1>
       <div className="flex-row">
         <div className="flex-large">
